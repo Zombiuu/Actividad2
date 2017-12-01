@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "529295522081",
+    "firebase_url": "https://actividad2android-5c841.firebaseio.com",
+    "project_id": "actividad2android-5c841",
+    "storage_bucket": "actividad2android-5c841.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:529295522081:android:1c2290a06389839c",
+        "android_client_info": {
+          "package_name": "com.example.ramsesdiezgalvan.actividad2"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "529295522081-qejutscpdsq4ibgqeaofrllllveftg2b.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.ramsesdiezgalvan.actividad2",
+            "certificate_hash": "2b82a37ef60dee87cdb6c59bb30fadea8ff6edd6"
+          }
+        },
+        {
+          "client_id": "529295522081-0tns51bdhp4cv5sr0ir6gut6coh6o76c.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBEeNvnrMf_M2RovDaVNaaq2GxJOYUDIjU"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "529295522081-0tns51bdhp4cv5sr0ir6gut6coh6o76c.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
