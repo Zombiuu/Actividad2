@@ -5,6 +5,7 @@ import android.util.Log;
 import android.view.View;
 
 import com.example.ramsesdiezgalvan.actividad2.firebase.FireBaseAdminListener;
+import com.google.firebase.database.DataSnapshot;
 
 /**
  * Created by ramsesdiezgalvan on 30/11/17.
@@ -22,30 +23,33 @@ public class SecondActivityEvents implements View.OnClickListener, FireBaseAdmin
     public void onClick(View view) {
         if (view.getId() == R.id.btnSignOut) {
 
-            signOut();
+            DataHolder.MyDataHolder.fireBaseAdmin.signOut();
 
+        }
     }
-    }
+
 
     @Override
-    public void createUserWithEmailAndPassword(String email, String password) {
-
-    }
-
-    @Override
-    public void singInWithEmailAndPassword(String email, String password) {
+    public void logInOk(boolean ok) {
 
     }
 
     @Override
-    public void signOut() {
-        Log.v("hola","TAYSIR BOTOOOOON");
-        DataHolder.MyDataHolder.firebaseAuth.getInstance().signOut();
+    public void registerOk(boolean ok) {
 
-        Intent intent = new Intent(secondActivity,MainActivity.class);
-        secondActivity.startActivity(intent);
-        secondActivity.finish();
+    }
 
+    @Override
+    public void signOutOk(boolean ok) {
+        if (ok) {
+            Intent intent = new Intent(secondActivity, MainActivity.class);
+            secondActivity.startActivity(intent);
+            secondActivity.finish();
+        }
+    }
+
+    @Override
+    public void downloadBranch(String branch, DataSnapshot dataSnapshot) {
 
     }
 }

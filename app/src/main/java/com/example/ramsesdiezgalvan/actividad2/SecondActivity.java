@@ -7,8 +7,8 @@ import android.widget.Button;
 public class SecondActivity extends AppCompatActivity {
 
 
-    Button btnSignOut;
-    SecondActivityEvents events;
+    private Button btnSignOut;
+    private SecondActivityEvents events;
 
 
 
@@ -18,6 +18,8 @@ public class SecondActivity extends AppCompatActivity {
         setContentView(R.layout.activity_second);
 
         events = new SecondActivityEvents(this);
+
+        DataHolder.MyDataHolder.fireBaseAdmin.setFireBaseAdminListener(events);
 
         this.btnSignOut = this.findViewById(R.id.btnSignOut);
 

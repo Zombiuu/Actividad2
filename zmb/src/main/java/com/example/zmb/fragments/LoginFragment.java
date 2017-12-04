@@ -19,10 +19,9 @@ import com.example.zmb.R;
 
 
 /**
- *  ESTO ES "A"
+ * ESTO ES "A"
  */
 public class LoginFragment extends Fragment {
-
 
 
     //text
@@ -34,12 +33,9 @@ public class LoginFragment extends Fragment {
     private Button btnReg;
 
 
-
-
-
     /**
      * Con esto conectamos "A" con "B"
-      */
+     */
     //events
 
     LoginFragmentsEvents events = new LoginFragmentsEvents(this);
@@ -99,35 +95,36 @@ public class LoginFragment extends Fragment {
     }
 }
 
+
 /**
  * ESTO ES "B"
  */
 
- class LoginFragmentsEvents implements View.OnClickListener{
+class LoginFragmentsEvents implements View.OnClickListener {
 
     //creamos un obj de A en B, no se puede hacer new de el.
 
     LoginFragment loginFragment;
 
-     public LoginFragmentsEvents(LoginFragment loginFragment) {
-         this.loginFragment = loginFragment;
-     }
+    public LoginFragmentsEvents(LoginFragment loginFragment) {
+        this.loginFragment = loginFragment;
+    }
 
-     @Override
-     public void onClick(View view) {
+    @Override
+    public void onClick(View view) {
 
-         if(view.getId() == R.id.btnLogReg){
-             if (this.loginFragment.listener != null)
-                 this.loginFragment.listener.OnRegisteredClicked();
+        if (view.getId() == R.id.btnLogReg) {
+            if (this.loginFragment.listener != null)
+                this.loginFragment.listener.OnRegisteredClicked();
 
 
-         }else if (view.getId() == R.id.btnLogLog){
-             if (this.loginFragment.listener != null)
-                 this.loginFragment.listener.OnLoginClicked();
+        } else if (view.getId() == R.id.btnLogLog) {
+            if (this.loginFragment.listener != null)
+                this.loginFragment.listener.OnLoginClicked();
 
-         }
+        }
 
-     }
- }
+    }
+}
 
 
