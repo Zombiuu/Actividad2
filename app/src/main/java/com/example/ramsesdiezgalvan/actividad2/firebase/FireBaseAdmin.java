@@ -1,5 +1,6 @@
 package com.example.ramsesdiezgalvan.actividad2.firebase;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.support.annotation.NonNull;
 
@@ -10,8 +11,11 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.analytics.FirebaseAnalytics;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 /**
  * Created by ramsesdiezgalvan on 30/11/17.
@@ -23,17 +27,19 @@ public class FireBaseAdmin {
     public FirebaseDatabase database;
     public DatabaseReference myRef;
 
-    public FireBaseAdmin(){
+    public FireBaseAdmin() {
 
         this.setmAuth(FirebaseAuth.getInstance());
         DataHolder.MyDataHolder.fireBaseAdmin = this;
+        this.database = FirebaseDatabase.getInstance();
+        myRef = database.getReference();
 
     }
 
-        public void initDatabase(){
+    public void initDatabase() {
         this.database = FirebaseDatabase.getInstance();
         this.myRef = database.getReference();
-        }
+    }
 
 
     public FirebaseAuth getmAuth() {
@@ -88,8 +94,31 @@ public class FireBaseAdmin {
 
     public void signOut() {
 
-            getmAuth().signOut();
-            fireBaseAdminListener.signOutOk(true);
+        getmAuth().signOut();
+        fireBaseAdminListener.signOutOk(true);
+
+    }
+
+    public void downAndObserveBranch(final String branch) {
+        //Leer y escuchar una rama
+        DatabaseReference refBranch = myRef.child(branch);
+
+        myRef.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                // This method is called once with the initial value and again
+                // whenever data at this location is updated.
+                fireBaseAdminListener.fireBaseDownloadBranch(branch,dataSnapshot);
+                // Log.d(TAG, "Value is: " + value);
+            }
+
+            @Override
+            public void onCancelled(DatabaseError error) {
+                fireBaseAdminListener.fireBaseDownloadBranch(branch,null);
+                // Failed to read value
+                //  Log.w(TAG, "Failed to read value.", error.toException());
+            }
+        });
 
     }
 

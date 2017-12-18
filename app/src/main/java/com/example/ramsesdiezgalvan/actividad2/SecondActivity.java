@@ -4,11 +4,15 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.Button;
 
+import com.example.zmb.fragments.ListFragment;
+
 public class SecondActivity extends AppCompatActivity {
 
 
     private Button btnSignOut;
     private SecondActivityEvents events;
+    ListFragment listFragment;
+
 
 
 
@@ -25,5 +29,8 @@ public class SecondActivity extends AppCompatActivity {
 
         this.btnSignOut.setOnClickListener(events);
 
+        listFragment = (ListFragment) getSupportFragmentManager().findFragmentById(R.id.fragmentList);
+        //Descargamos la rama que queramos
+        DataHolder.MyDataHolder.fireBaseAdmin.downAndObserveBranch("Coches");
     }
 }

@@ -13,7 +13,7 @@ import com.google.firebase.database.DataSnapshot;
 
 public class SecondActivityEvents implements View.OnClickListener, FireBaseAdminListener {
 
-    private SecondActivity secondActivity;
+     SecondActivity secondActivity;
 
     public SecondActivityEvents(SecondActivity secondActivity) {
         this.secondActivity = secondActivity;
@@ -49,7 +49,10 @@ public class SecondActivityEvents implements View.OnClickListener, FireBaseAdmin
     }
 
     @Override
-    public void downloadBranch(String branch, DataSnapshot dataSnapshot) {
+    public void fireBaseDownloadBranch(String branch, DataSnapshot dataSnapshot) {
+
 
     }
+
+
 }

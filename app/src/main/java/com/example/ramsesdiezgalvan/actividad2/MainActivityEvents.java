@@ -82,7 +82,9 @@ public class MainActivityEvents implements LoginFragmentsListener, RegisterFragm
     }
 
     @Override
-    public void downloadBranch(String branch, DataSnapshot dataSnapshot) {
+    public void fireBaseDownloadBranch(String branch, DataSnapshot dataSnapshot) {
 
     }
+
+
 }

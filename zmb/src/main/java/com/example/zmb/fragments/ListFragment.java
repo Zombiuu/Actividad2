@@ -8,9 +8,10 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ListAdapter;
 
 import com.example.zmb.R;
+
+import java.util.ArrayList;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -34,12 +35,13 @@ public class ListFragment extends Fragment {
         miLista = v.findViewById(R.id.miLista);
 
 
-        //setear el layour para que sea de tipo Grid(Rejilla)
-        miLista.setLayoutManager(new GridLayoutManager(getContext(),2));
+        //setear el layout para que sea de tipo Grid(Rejilla)
+        miLista.setLayoutManager(new GridLayoutManager(getContext(), 2));
 
-        //los adapters son para las listas, o elementos visuales que se recicle el contenido de manera sistematica.
+        //los adapters son para las listas, o elementos visuales que se reciclan el contenido de manera sistematica para meter contenido.
 
-        miLista.setAdapter(new ListFragmentAdapter());
+
+
         return v;
 
 

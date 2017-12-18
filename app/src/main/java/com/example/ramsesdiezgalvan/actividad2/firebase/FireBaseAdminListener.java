@@ -12,7 +12,7 @@ public interface FireBaseAdminListener {
     public void logInOk(boolean ok );
     public void registerOk(boolean ok);
     public void signOutOk(boolean ok);
-    public void downloadBranch(String branch, DataSnapshot dataSnapshot);
+    public void fireBaseDownloadBranch(String branch, DataSnapshot dataSnapshot);
 
 }
 
