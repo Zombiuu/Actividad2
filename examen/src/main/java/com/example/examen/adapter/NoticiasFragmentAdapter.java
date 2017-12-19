@@ -1,6 +1,7 @@
 package com.example.examen.adapter;
 
 import android.content.Context;
+import android.net.Uri;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -12,6 +13,7 @@ import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.example.examen.Noticias;
 import com.example.zmb.R;
+import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 
@@ -48,9 +50,11 @@ public class NoticiasFragmentAdapter extends RecyclerView.Adapter<NoticiasHolder
         holder.txtViewContenido.setText(noticias.get(position).contenido);
         holder.txtViewTitulo.setText(noticias.get(position).titulo);
         holder.txtViewUrl.setText(noticias.get(position).url);
-        Glide.with(mContext).load(noticias.get(position).url)
-                .into(holder.imageView);
 
+       // Glide.with(mContext).load(noticias.get(position).url)
+          //      .into(holder.imageView);
+
+        Picasso.with(mContext).load(noticias.get(position).url).into(holder.imageView);
     }
 
 

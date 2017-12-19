@@ -7,6 +7,7 @@ import android.view.View;
 //import com.example.ramsesdiezgalvan.actividad2.Adapter.ListFragmentAdapter;
 import com.example.examen.adapter.NoticiasFragmentAdapter;
 import com.example.examen.firebase.FireBaseAdminListener;
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.GenericTypeIndicator;
 
@@ -47,6 +48,7 @@ public class SecondActivityEvents implements View.OnClickListener, FireBaseAdmin
     @Override
     public void signOutOk(boolean ok) {
         if (ok) {
+
             Intent intent = new Intent(secondActivity, MainActivity.class);
             secondActivity.startActivity(intent);
             secondActivity.finish();
