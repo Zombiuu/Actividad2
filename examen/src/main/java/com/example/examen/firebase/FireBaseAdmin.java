@@ -90,9 +90,9 @@ public class FireBaseAdmin {
 
     public void downAndObserveBranch(final String branch) {
         //Leer y escuchar una rama
-       // DatabaseReference refBranch = myRef.child(branch);
+        DatabaseReference refBranch = myRef.child(branch);
 
-        myRef.addValueEventListener(new ValueEventListener() {
+        refBranch.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 // This method is called once with the initial value and again

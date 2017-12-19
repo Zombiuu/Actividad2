@@ -6,14 +6,14 @@
     android:orientation="vertical">
 
     <TextView
-        android:id="@+id/txtViewMarca"
+        android:id="@+id/txtViewContenido"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_weight="1"
         android:text="TextView" />
 
     <TextView
-        android:id="@+id/txtViewModelo"
+        android:id="@+id/txtViewTitulo"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_weight="1"

@@ -30,7 +30,8 @@ public class SecondActivity extends AppCompatActivity {
         this.btnSignOut.setOnClickListener(events);
 
         listFragment = (ListFragment) getSupportFragmentManager().findFragmentById(R.id.fragmentList);
+
         //Descargamos la rama que queramos
-        DataHolder.instance.fireBaseAdmin.downAndObserveBranch("Coches");
+        DataHolder.instance.fireBaseAdmin.downAndObserveBranch("Noticias");
     }
 }

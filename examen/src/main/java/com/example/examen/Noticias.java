@@ -7,9 +7,9 @@ import com.google.firebase.database.IgnoreExtraProperties;
  */
 @IgnoreExtraProperties
 public class Noticias {
-    String titulo;
-    String contenido;
-    String url;
+    public String titulo;
+    public String contenido;
+    public String url;
 
     public Noticias(){
 
