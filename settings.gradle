@@ -1,1 +1,1 @@
-include ':app', ':zmb'
+include ':app', ':zmb', ':examen'

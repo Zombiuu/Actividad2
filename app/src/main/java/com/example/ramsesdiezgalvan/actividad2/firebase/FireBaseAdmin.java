@@ -29,8 +29,7 @@ public class FireBaseAdmin {
 
     public FireBaseAdmin() {
 
-        this.setmAuth(FirebaseAuth.getInstance());
-        DataHolder.MyDataHolder.fireBaseAdmin = this;
+        mAuth = FirebaseAuth.getInstance();
         this.database = FirebaseDatabase.getInstance();
         myRef = database.getReference();
 
@@ -42,22 +41,15 @@ public class FireBaseAdmin {
     }
 
 
-    public FirebaseAuth getmAuth() {
-        return mAuth;
-    }
-
-    public void setmAuth(FirebaseAuth mAuth) {
-        this.mAuth = mAuth;
-    }
 
 
     public void createUserWithEmailAndPassword(String email, String password) {
-        this.getmAuth().createUserWithEmailAndPassword(email, password)
+        System.out.println("EMAIL: "+email+" PASS: "+password);
+        mAuth.createUserWithEmailAndPassword(email, password)
                 .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()) {
-
                             fireBaseAdminListener.registerOk(true);
 
 
@@ -70,15 +62,16 @@ public class FireBaseAdmin {
 
     public void singInWithEmailAndPassword(String email, String password) {
 
-        if (getmAuth().getCurrentUser() != null) {
+        if (mAuth.getCurrentUser() != null) {
             // Already signed in
             // Do nothing
             System.out.println("    ESTOY LOGUEADO!!!!!!!!!");
         } else {
-            this.getmAuth().signInWithEmailAndPassword(email, password)
+            mAuth.signInWithEmailAndPassword(email, password)
                     .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                         @Override
                         public void onComplete(@NonNull Task<AuthResult> task) {
+
                             System.out.println("ACABO DE LOGUEARME!!!!!!!!");
                             if (task.isSuccessful()) {
 
@@ -94,7 +87,7 @@ public class FireBaseAdmin {
 
     public void signOut() {
 
-        getmAuth().signOut();
+        mAuth.signOut();
         fireBaseAdminListener.signOutOk(true);
 
     }

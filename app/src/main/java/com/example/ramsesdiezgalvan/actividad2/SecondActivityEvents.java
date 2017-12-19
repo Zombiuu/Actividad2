@@ -6,7 +6,6 @@ import android.view.View;
 
 import com.example.ramsesdiezgalvan.actividad2.Adapter.ListFragmentAdapter;
 import com.example.ramsesdiezgalvan.actividad2.firebase.FireBaseAdminListener;
-import com.example.zmb.fragments.ListFragment;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.GenericTypeIndicator;
 
@@ -28,7 +27,7 @@ public class SecondActivityEvents implements View.OnClickListener, FireBaseAdmin
     public void onClick(View view) {
         if (view.getId() == R.id.btnSignOut) {
 
-            DataHolder.MyDataHolder.fireBaseAdmin.signOut();
+            DataHolder.instance.fireBaseAdmin.signOut();
 
         }
     }
@@ -59,9 +58,12 @@ public class SecondActivityEvents implements View.OnClickListener, FireBaseAdmin
         GenericTypeIndicator<ArrayList<FBCoche>> indicator = new GenericTypeIndicator<ArrayList<FBCoche>>() {
         };
         ArrayList<FBCoche> coches = dataSnapshot.getValue(indicator);
-        Log.v("hey","COCHES: "+coches.get(1).modelo);
-        ListFragmentAdapter listFragmentAdapter = new ListFragmentAdapter(coches);
-        secondActivity.listFragment.miLista.setAdapter(listFragmentAdapter);
+        Log.v("hey","COCHES: "+coches);
+
+        ListFragmentAdapter listFragmentAdapter = new ListFragmentAdapter(coches,secondActivity);
+
+        secondActivity.listFragment.recyclerView.setAdapter(listFragmentAdapter);
+
     }
 
 

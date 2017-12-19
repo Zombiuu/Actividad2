@@ -9,11 +9,11 @@ import com.google.firebase.database.FirebaseDatabase;
  */
 
 public class DataHolder {
+    public static DataHolder instance = new DataHolder();
+    public FireBaseAdmin fireBaseAdmin;
 
-    public static class MyDataHolder{
-        public static FireBaseAdmin fireBaseAdmin;
-
-
-
+    public DataHolder(){
+        fireBaseAdmin = new FireBaseAdmin();
     }
+
 }

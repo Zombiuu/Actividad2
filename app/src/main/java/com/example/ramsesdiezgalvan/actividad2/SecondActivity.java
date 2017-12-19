@@ -11,7 +11,7 @@ public class SecondActivity extends AppCompatActivity {
 
     private Button btnSignOut;
     private SecondActivityEvents events;
-    ListFragment listFragment;
+    public ListFragment listFragment;
 
 
 
@@ -23,7 +23,7 @@ public class SecondActivity extends AppCompatActivity {
 
         events = new SecondActivityEvents(this);
 
-        DataHolder.MyDataHolder.fireBaseAdmin.setFireBaseAdminListener(events);
+        DataHolder.instance.fireBaseAdmin.setFireBaseAdminListener(events);
 
         this.btnSignOut = this.findViewById(R.id.btnSignOut);
 
@@ -31,6 +31,6 @@ public class SecondActivity extends AppCompatActivity {
 
         listFragment = (ListFragment) getSupportFragmentManager().findFragmentById(R.id.fragmentList);
         //Descargamos la rama que queramos
-        DataHolder.MyDataHolder.fireBaseAdmin.downAndObserveBranch("Coches");
+        DataHolder.instance.fireBaseAdmin.downAndObserveBranch("Coches");
     }
 }
