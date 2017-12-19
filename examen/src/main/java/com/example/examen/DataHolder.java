@@ -13,9 +13,5 @@ public class DataHolder {
     public DataHolder(){
         fireBaseAdmin = new FireBaseAdmin();
     }
-    public static class MyDataHolder {
-        public static FireBaseAdmin fireBaseAdmin;
 
-
-    }
 }

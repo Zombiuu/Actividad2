@@ -11,12 +11,13 @@ public class Noticias {
     public String contenido;
     public String url;
 
-    public Noticias(){
+    public Noticias() {
 
     }
-    public Noticias(String titulo, String contenido, String url){
-    this.contenido = contenido;
-    this.titulo = titulo;
-    this.url = url;
+
+    public Noticias(String titulo, String contenido, String url) {
+        this.contenido = contenido;
+        this.titulo = titulo;
+        this.url = url;
     }
 }

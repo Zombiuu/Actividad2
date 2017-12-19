@@ -1,8 +1,10 @@
 package com.example.examen.firebase;
 
+import android.content.Intent;
 import android.support.annotation.NonNull;
 
 import com.example.examen.DataHolder;
+import com.example.examen.MainActivity;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
@@ -83,6 +85,8 @@ public class FireBaseAdmin {
 
 
     public void signOut() {
+
+            fireBaseAdminListener.signOutOk(true);
 
 
 
